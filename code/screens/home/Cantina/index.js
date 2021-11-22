@@ -1,0 +1,24 @@
+import React from "react";
+import { animations } from "../../../../assets/js/consts";
+function Cantina({ generateLink }) {
+  return (
+    <div className="section cantina" id="section1" data-anchor="cantina-metaverse">
+       
+      <div className = 'container hidden-flex'>
+      
+      <h2 className="container-title">
+       <strong> Lorem ipsum</strong> dolor ut elit <br /> amet, consectetur sit
+      </h2>
+      <div
+        className={`${animations.bounceIn} bottom-text cantina-bottom-text`}
+      >
+        <p className='gradiant-text'>Lorem ipsum dolor sit amet,</p>
+        <p className='gradiant-text'>consectetur adipiscing elit ut lorem,</p>
+        <p className='gradiant-text'>purus sit amet luctus venenatis</p>
+      </div>
+      </div>
+    </div>
+  );
+}
+
+export default Cantina;

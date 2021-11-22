@@ -1,0 +1,3 @@
+---
+layout: screens/home/index
+---
