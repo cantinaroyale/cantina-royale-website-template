@@ -1,10 +1,11 @@
-import { pagesIndexes, sections } from "./consts/index.js"
+import { pagesIndexes, sections, pageLoaderAnimationTime } from "./consts/index.js"
 import variationsPage from './pages/variations.js';
 import mainPage from './pages/main.js';
 import indicator from './indicator/index.js'
 import speciesPage from './pages/species.js'
 import pvePage from "./pages/pve.js";
 import pvpPage from "./pages/pvp.js";
+import { delay } from "./utils/index.js";
 
 const initFullPage = () => {
     $("#fullpage").fullpage({
@@ -38,8 +39,10 @@ const onPageChanged = (index) => {
             break;
         case pagesIndexes.pve:
             pvePage.onPageInView()
+            break;
             case pagesIndexes.pvp:
-                pvpPage.onPageInView()
+            pvpPage.onPageInView()
+            break;
         default:
     }
 }
@@ -61,6 +64,7 @@ const changeNavbarStyle = (index) => {
 const stopVideos = () => {
     mainPage.stopVideo()
     pvePage.stopVideo()
+    variationsPage.stopVideo()
 }
 
 
@@ -69,9 +73,16 @@ const clearIntervals = () => {
 }
 
 
-const hideLoader = () => {
-    const loader = document.querySelector(".page-loader");
-    loader.style.display = "none";
+const hideLoader = async () => {
+    await delay(pageLoaderAnimationTime)
+    const homeOverlay = document.querySelector(".home-overlay");
+    const loader = document.querySelector(".app-loader");
+    loader.style.opacity = 0;
+    homeOverlay.style.opacity = 1
+    const navbarFlex = document.querySelector(".navbar-flex");
+    navbarFlex.style.display = 'flex'
+    await delay(1000)
+    loader.style.display = 'none';
 }
 
 
@@ -83,14 +94,15 @@ const resetUrl = () => {
 
 
 
-export const init = async () => {
-    hideLoader()
+export const init =  async () => {
     mainPage.initVideo()
     initFullPage()
     resetUrl()
     indicator.addEvents()
     speciesPage.initSlider()
-};
+    await hideLoader()
+    mainPage.playVideo(500)
+}
 
 window.onload = () => {
     init()

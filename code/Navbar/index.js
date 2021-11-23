@@ -1,10 +1,11 @@
 import React from 'react'
-import { images } from '../../assets/js/consts'
+import { animations, images } from '../../assets/js/consts'
 
 function Navbar() {
     return (
         <nav className='navbar'>
-            <div className='navbar-left'>
+            <div className = 'navbar-flex'>
+            <div className={`${animations.fadeInLeft} navbar-left animate__delay-0s`}>
                 <div className='navbar-hamburger'>
                     <section></section>
                     <section></section>
@@ -12,7 +13,8 @@ function Navbar() {
                 </div>
                 <a href='/' className='navbar-logo'><img src={images.navbar.logo} alt='logo' /></a>
             </div>
-            <img src={images.navbar.comingSoon} className='navbar-coming-soon' />
+            <img  src={images.navbar.comingSoon} className={`${animations.fadeInRight} navbar-coming-soon animate__delay-0s`} />
+            </div>
         </nav>
     )
 }

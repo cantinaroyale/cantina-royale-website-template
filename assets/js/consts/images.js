@@ -5,6 +5,10 @@ export const images = {
     videImg: "/assets/images/home/img1.png",
     play: "/assets/images/home/play.svg",
     close: "/assets/images/home/close.svg",
+    appLoader: "/assets/images/home/app-loader.png",
+    appLoaderOverlay: "/assets/images/home/app-loader-overlay.png",
+    appLoaderBg: "/assets/images/home/app-loader-bg.png",
+    overlay: "/assets/images/home/overlay.png",
     main: {
             bg: "/assets/images/home/main/bg.png"
     },
@@ -33,6 +37,7 @@ export const images = {
     },
     variations: {
         globe: "/assets/images/home/variations/globe.png",
+        videoShape: "/assets/images/home/variations/video-shape.png",
     },
     pve:{
         bg: "/assets/images/home/pve/bg.png",

@@ -1,4 +1,7 @@
 import {delay} from '../utils/index.js'
+import VideoController from '../videoController/index.js'
+let video
+
 
 let interval
 const initWebGL = () => {
@@ -16,6 +19,19 @@ const initWebGL = () => {
 
 
 
+
+const initVideo = () => {
+    let videoSrc;
+    if (window.innerWidth <= 600) {
+        videoSrc = "/assets/videos/mobile/video-low-quality.m3u8";
+    } else {
+        videoSrc = "/assets/videos/desktop/video.m3u8";
+    }
+    video = new VideoController('variations-video', videoSrc)
+};
+
+
+
 const hideLoader = () => {
     const loader = document.querySelector('#variations-ape-loader')
     const modal = document.querySelector('.ape-figure')
@@ -26,6 +42,11 @@ const hideLoader = () => {
 
 
 const onPageInView = async () => {
+    if(!video){
+    initVideo()
+    }
+    video.play()
+
     if (!window.gameInstance) {
         await delay(1000)
         initWebGL()
@@ -45,9 +66,18 @@ const clearInterval =  () => {
     }
 }
 
+
+const stopVideo = () => {
+    if(video){
+        video.stop()
+    }
+ 
+}
+
 const variationsPage = {
     clearInterval,
-    onPageInView
+    onPageInView,
+    stopVideo
 }
 
 export default variationsPage

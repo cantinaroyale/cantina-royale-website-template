@@ -5,13 +5,19 @@
         bottom: 80px;
         left: 80px;
     }
+
+    .full-screen-video-wrapper{
+        
+    }
+
+
     
-    #main-video {
-        position: absolute;
-        right: 0;
-        top: 0;
-       
-        transition: 0.6s all;
-        opacity: 0;
-      }
+  
 }
+#main-video {
+    transition: 0.6s all;
+    opacity: 0;
+    z-index:0;
+
+   
+  }

@@ -1,5 +1,6 @@
 import React from "react";
 import { pageImages } from "../../assets/js/consts";
+import AppLoader from "../common/AppLoader";
 import { handleUrl } from "../utils";
 import MetaTags from "./meta";
 
@@ -32,7 +33,8 @@ const Page = ({ title, _relativeURL, _ID, main }) => {
         />
       </head>
       <body>
-        <div className="page-loader">Loading...</div>
+
+        <AppLoader />
         <div className="main">{main}</div>
         <div id="content" className="content">
           <div

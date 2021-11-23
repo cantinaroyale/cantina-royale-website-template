@@ -2,10 +2,7 @@ import { delay } from "../utils/index.js"
 import VideoController from '../videoController/index.js'
 let video
 
-const onPageInView = async () => {
-    await delay(1000)
-    video.play()
-}
+
 
 
 const initVideo = () => {
@@ -23,11 +20,22 @@ const stopVideo = () => {
     video.stop()
 }
 
+const playVideo = async (timeout) => {
+    await delay(timeout || 1000)
+    video.play()
+}
+
+
+const onPageInView = async () => {
+    
+    playVideo()
+}
 
 const mainPage = {
     onPageInView,
     initVideo,
-    stopVideo
+    stopVideo,
+    playVideo
 }
 
 export default mainPage

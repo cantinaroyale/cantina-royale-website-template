@@ -1,6 +1,6 @@
 import React from "react";
 import { animations } from "../../../../assets/js/consts";
-import { Scroller, Video } from "../../../common";
+import { Scroller, Video, Overlay } from "../../../common";
 
 function Main() {
   return (
@@ -12,7 +12,11 @@ function Main() {
           <p className='gradiant-text'>consectetur adipiscing elit ut lorem,</p>
           <p className='gradiant-text'>purus sit amet luctus venenatis</p>
         </div>
-        <Video id="main-video" />
+        {/* <div className='full-screen-video-wrapper'>
+          <Overlay />
+        <Video id="main-video" className='full-screen-video' />
+        </div> */}
+       
         <Scroller />
       </div>
     </div>

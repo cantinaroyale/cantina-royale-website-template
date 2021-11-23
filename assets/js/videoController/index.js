@@ -1,5 +1,3 @@
-console.log(Hls) 
-
 
 class VideoController {
     videoUrl
@@ -26,11 +24,13 @@ class VideoController {
     stop() {
         this.video.pause();
         this.video.style.opacity = 0;
+        this.video.style.zIndex = 0;
         this.video.currentTime = 0;
     }
     play() {
         this.video.play();
         this.video.style.opacity = 1;
+        this.video.style.zIndex = 10;
     }
 
 }

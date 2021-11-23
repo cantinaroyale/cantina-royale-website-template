@@ -11,6 +11,7 @@ function Pve() {
                 </Frame>
                 </Popup>
             <div className='container hidden-flex'>
+                
                 <h3 className={`${animations.slideInUp} container-title`}><strong>Lorem ipsum </strong> dolor ut elit amet, consectetur sit</h3>
                 <h5 className={`${animations.fadeIn} container-subtitle`}><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit ut lorem, purus sit <strong>amet luctus</strong> venenatis</h5>
                 <div className='pve-bottom-flex'>

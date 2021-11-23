@@ -3,7 +3,7 @@
 @import './frame.scss';
 @import './spinner.scss';
 @import './popup.scss';
-
+@import './app-loader.scss';
 
 .flex-start {
   display: flex;
@@ -33,7 +33,8 @@ body {
   align-items: center;
   height:100%;
   justify-content:flex-start;
-  padding-top:150px;
+  padding-top:120px;
+
   &-title {
     font-weight: bold;
     font-size: 40px;
