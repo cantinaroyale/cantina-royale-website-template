@@ -1,11 +1,12 @@
 import React from 'react'
 import { images } from '../../../assets/js/consts/images'
 
-function Popup({children, id='', className =''}) {
+function Popup({children, id='', className ='', withBlur}) {
     return (
         <div className={`popup ${className}`} id = {id}>
             <div className='popup-overlay'></div>
             <div className='popup-content'>
+                {withBlur && <div className='popup-blur'></div>}
                 <button className='popup-content-close' > 
                     <img src = {images.close}  />
                 </button>

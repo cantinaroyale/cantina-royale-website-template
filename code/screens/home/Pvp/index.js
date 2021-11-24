@@ -13,7 +13,7 @@ function Pvp() {
             <div className='container hidden-flex'>
                 <h3 className={`${animations.slideInUp} container-title`}><strong>Lorem ipsum </strong> dolor ut elit amet, consectetur sit</h3>
                 <h5 className={`${animations.fadeIn} container-subtitle`}><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit ut lorem, purus sit <strong>amet luctus</strong> venenatis</h5>
-                <div className='pvp-bottom-flex'>
+                <div className='page-bottom-flex'>
                 <div className='bottom-text pvp-bottom-text'>
                     <p className='gradiant-text'>Lorem ipsum dolor sit amet,</p>
                     <p className='gradiant-text'>consectetur adipiscing elit ut lorem,</p>

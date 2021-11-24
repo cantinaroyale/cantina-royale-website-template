@@ -76,7 +76,7 @@ h1,h2,h3,h4,h5,p,h6, strong, button, a{
   transform: translate(-50%);
   bottom: 30px;
   z-index: 999;
-  display: flex;
+  display: none;
   justify-content: center;
   
   figure {
@@ -125,6 +125,8 @@ h1,h2,h3,h4,h5,p,h6, strong, button, a{
     font-size: 26px;
     color: white;
     line-height: 36px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     strong{
       font-weight: 500;
     }
@@ -139,11 +141,14 @@ h1,h2,h3,h4,h5,p,h6, strong, button, a{
   pointer-events:none;
     .popup{
       &-content{
-        max-width: 800px;
-        height: 600px;
+        max-width: 1150px;
+        max-height: 780px;
+        width:calc(100% - 100px);
+        height:calc(100% - 100px);
         .frame{
+          padding:30px;
           &-inner{
-            padding:15px;
+            padding:20px;
             &-content{
               overflow:hidden;
 
@@ -174,8 +179,10 @@ h1,h2,h3,h4,h5,p,h6, strong, button, a{
     object-fit:cover;
 }
   .frame{
+    padding: 15px;
+    position:relative;
     &-inner{
-      padding: 15px;
+      padding: 10px;
       &-content{
           overflow:hidden;
           padding: 0px;

@@ -1,6 +1,6 @@
 .indicator {
   position: fixed;
-  right: 100px;
+  right:65px;
   z-index: 10000;
 
   &-line {
@@ -28,7 +28,7 @@
 
       text-align: right;
       flex: 1;
-      padding-right: 30px;
+      padding-right: 50px;
       opacity:0;
       transition:0.3s all;
       font-size: 14px;

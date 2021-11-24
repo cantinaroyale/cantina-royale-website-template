@@ -17,7 +17,7 @@
         top:0px;
         
         transform: scale(1.03);
-        animation: zoomOutBg 6s linear 1s forwards ;
+        animation: zoomOutBg 4s linear 1s forwards ;
         transform-origin:center;
     }
    
@@ -27,7 +27,7 @@
         object-fit:contain;
         position:relative;
         z-index:10;
-        animation: zoomOutImage 6s linear 1s forwards ;
+        animation: zoomOutImage 4s linear 1s forwards ;
     }
     &-overlay{
         position:absolute;

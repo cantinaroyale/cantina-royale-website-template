@@ -1,9 +1,8 @@
 import React from 'react'
-import { images } from '../../../assets/js/consts'
 
-function Overlay() {
+function Overlay({id ='', src}) {
     return (
-        <img src = {images.overlay} className='home-overlay' />
+        src ? <img src = {src} className='home-overlay' id = {id} /> : null
     )
 }
 

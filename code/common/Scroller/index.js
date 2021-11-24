@@ -1,8 +1,8 @@
 import React from "react";
-
+import {animations} from '../../../assets/js/consts'
 function Scroller() {
   return (
-    <div className="scroller">
+    <div className={`${animations.slideInUp} scroller`}>
       <figure></figure>
     </div>
   );

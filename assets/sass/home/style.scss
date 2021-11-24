@@ -79,8 +79,23 @@
     width: 100%;
     height: 100%;
     pointer-events: none;
-    opacity:0;
+    opacity:1;
     transition:0.3s all;
+  }
+}
+
+
+.page-bottom-flex{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  width:100%;
+  margin-top:auto;
+  padding-right:130px;
+  padding-bottom:80px;
+  padding-left:80px;
+  .frame{
+    margin:0px;
   }
 }
 
