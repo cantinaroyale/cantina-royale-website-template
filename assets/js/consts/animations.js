@@ -20,6 +20,7 @@ const animations = {
   fadeInTopRight: `${base} animate__fadeInTopRight`,
   fadeInTopLeft: `${base} animate__fadeInTopLeft`,
   fadeInRight: `${base} animate__fadeInRight`,
+  fadeOutRight: `animate__fadeOutRight`,
   fadeInBottomRight: `${base} animate__fadeInBottomRight`,
   fadeInBottomLeft: `${base} animate__fadeInBottomLeft`,
   flip: `${base} animate__flipInX`,

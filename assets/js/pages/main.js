@@ -1,41 +1,55 @@
-import { delay } from "../utils/index.js"
+import { delay, isMobile } from "../utils/index.js"
 import VideoController from '../videoController/index.js'
-let video
 
 
 
 
-const initVideo = () => {
-    let mainVideoUrl;
-    if (window.innerWidth <= 600) {
-        mainVideoUrl = "/assets/videos/mobile/video-low-quality.m3u8";
-    } else {
-        mainVideoUrl = "/assets/videos/desktop/video.m3u8";
+class MainPage {
+    video
+    isPlaying
+    getVideoUrl() {
+        if (isMobile()) {
+            return "/assets/videos/mobile/video-low-quality.m3u8";
+        } else {
+            return "/assets/videos/desktop/video.m3u8";
+        }
     }
-    video = new VideoController('main-video', mainVideoUrl)
-    //  video.play()
-};
 
-const stopVideo = () => {
-    video.stop()
+    createVideo() {
+        this.video = new VideoController('main-video', this.getVideoUrl())
+    };
+
+    stopVideo() {
+        if (this.isPlaying) {
+            this.video.stop()
+            this.isPlaying = false
+        }
+    }
+
+    async onPageInView(delayMilliseconds){
+        this.playVideo(delayMilliseconds)
+    }
+
+
+    async playVideo(delayMilliseconds){
+        if (!this.video) {
+            this.createVideo()
+        }
+        if(delayMilliseconds){
+            await delay(delayMilliseconds) 
+        }
+
+        this.video.play()
+        this.isPlaying = true
+    }
+
 }
 
-const playVideo = async (timeout) => {
-    await delay(timeout || 1000)
-    video.play()
-}
+
+const mainPage = new MainPage()
 
 
-const onPageInView = async () => {
-    
-    playVideo()
-}
 
-const mainPage = {
-    onPageInView,
-    initVideo,
-    stopVideo,
-    playVideo
-}
+
 
 export default mainPage

@@ -1,47 +1,85 @@
 import VideoController from '../videoController/index.js'
 import uiUtil from '../utils/ui.js'
-let video
+import { isMobile } from '../utils/index.js';
+
+class PvpPage {
+    isPlaying
+    video
+    overlay = document.querySelector('#pvp-popup .popup-overlay')
+    closeBtn = document.querySelector('#pvp-popup .popup-content-close')
+    popup = document.querySelector('#pvp-popup')
+    container = document.querySelector('#pvp-bottom-frame')
 
 
-
-
-const initVideo = () => {
-    let videoSrc;
-    if (window.innerWidth <= 600) {
-        videoSrc = "/assets/videos/mobile/video-low-quality.m3u8";
-    } else {
-        videoSrc = "/assets/videos/desktop/video.m3u8";
+    constructor(){
+        this.addEventsToPlayVideo()
+        this.addEventsToCloseVideo()
     }
-    video = new VideoController('pvp-video', videoSrc)
-    const overlay = document.querySelector('#pvp-popup .popup-overlay')
-    const closeBtn = document.querySelector('#pvp-popup .popup-content-close')
-    const popup = document.querySelector('#pvp-popup')
-    const container = document.querySelector('#pvp-bottom-frame')
-    uiUtil.addEventsToPopup(popup, overlay, closeBtn, video)
-    uiUtil.addEventsToVideoPreview(popup, container, video)
-};
 
-
-
-const stopVideo = () => {
-    if(video){
-        video.stop()
+    getVideoUrl() {
+        if (isMobile()) {
+            return "/assets/videos/mobile/video-low-quality.m3u8";
+        } else {
+            return "/assets/videos/desktop/video.m3u8";
+        }
     }
-    const popup = document.querySelector('#pvp-popup')
-    uiUtil.togglePopup(popup, false)
+
+    stopVideo() {
+        if (this.isPlaying) {
+            this.video.stop()
+            this.isPlaying = false
+            this.togglePopup(false)
+        }
+       
+    }
+
+
+    togglePopup(show) {
+        uiUtil.toggleSectionsZindex(show)
+        this.popup.style.opacity = show ? 1 : 0
+        this.popup.style.pointerEvents = show ? 'all' : 'none'
+    }
+
+
+    createVideo() {
+        this.video = new VideoController('pvp-video', this.getVideoUrl())
+    };
+
+
+    addEventsToCloseVideo = () => {
+        this.overlay.addEventListener('click', () => {
+            this.stopVideo()
+        })
+        this.closeBtn.addEventListener('click', () => {
+            this.stopVideo()
+        })
+    }
+
+    addEventsToPlayVideo() {
+        this.container.addEventListener('click', () => {
+            this.playVideo()
+        })
+    }
+
+    playVideo() {
+        if (!this.video) {
+            this.createVideo()
+        }
+        this.togglePopup(true)
+        this.video.play()
+        this.isPlaying = true
+    }
+
+    onPageInView() {
+        
+    }
+
+
+
 }
 
 
-const onPageInView = async () => {
-    if(!video){
-     initVideo() 
-    }
-}
+const pvpPage = new PvpPage()
 
-
-const pvpPage = {
-    onPageInView,
-    stopVideo
-}
 
 export default pvpPage

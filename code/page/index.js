@@ -4,8 +4,6 @@ import AppLoader from "../common/AppLoader";
 import { handleUrl } from "../utils";
 import MetaTags from "./meta";
 
-
-
 const Page = ({ title, _relativeURL, _ID, main }) => {
   return (
     <html>
@@ -36,6 +34,7 @@ const Page = ({ title, _relativeURL, _ID, main }) => {
 
         {/* <AppLoader /> */}
         <div className="main">{main}</div>
+        <canvas />
         <div id="content" className="content">
           <div
             id="slider"
@@ -55,8 +54,15 @@ const Page = ({ title, _relativeURL, _ID, main }) => {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src={handleUrl('/assets/js/webgl/UnityLoader.js', _relativeURL, _ID)}></script>
+        {/* <script src = 'https://unpkg.com/gl-transitions@0.57.0/gl-transitions.json' />
+        <script src = 'https://unpkg.com/gl-transitions@0.57.0/gl-transitions.js' /> */}
+        {/* <script src ='https://cdn.jsdelivr.net/npm/gl-shader@4.3.1/index.min.js' /> */}
         <script
           src={handleUrl("/assets/js/transition/sketch.js", _relativeURL, _ID)}
+        />
+        <script
+        type='module'
+          src={handleUrl("/assets/js/script.js", _relativeURL, _ID)}
         />
         <script
           src={handleUrl("/assets/js/transition/demo.js", _relativeURL, _ID)}

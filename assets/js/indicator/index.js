@@ -2,16 +2,6 @@ const addEvents = () => {
     const sections = document.querySelectorAll('.indicator-section')
     const sectionsText = document.querySelectorAll('.indicator-section-btn')
     const indicator = document.querySelector('.indicator')
-    // indicator.addEventListener('mouseenter', () => {
-    //     sectionsText.forEach(section => {
-    //         section.style.display = 'block'
-    //     })
-    // })
-    // indicator.addEventListener('mouseleave', () => {
-    //     sectionsText.forEach(section => {
-    //         section.style.display = 'none'
-    //     })
-    // })
     sections.forEach(section => {
         const hash = section.getAttribute('data-link')
         section.addEventListener('click', () => {

@@ -1,15 +1,24 @@
 .variations {
     background:black;
+    .container-subtitle{
+        z-index:99;
+        position:relative;
+    }
     &-ape{
         position: relative;
         z-index: 99;
         width: fit-content;
+        &-arrow{
+            position:absolute;
+            left:100%;
+            top:49%;
+        }
     }
     &-video{
         position: absolute;
        
-        left:80px;
-        top:0px;
+        left:0px;
+        top:-60px;
         &-overlay{
             position: absolute;
             left: 50%;
@@ -22,15 +31,24 @@
 
         }
         &-container{
-            width: 1250px;
-            height: auto;
-            overflow:hidden;     
+            width: 1150px;
+            height: 730px;
+            overflow:hidden;  
+            &-circle{
+                position:absolute;
+                left:50%;
+                width:550px;
+                height:550px;
+                object-fit:contain;
+                transform:translate(-50%);
+                z-index:99;
+            }   
         }
         video{
             width: 100%;
             height: auto;
            transform: scale(1.6);
-           
+           margin-top:-60px;
         }
     }
     #variations-ape-loader{
@@ -58,44 +76,6 @@
         z-index: 10;
     }
 
-
-
-    // &-overlay {
-    //     position: absolute;
-    //     z-index: 1;
-    //     top: 0;
-    //     left: 0;
-    //     bottom: 0;
-    //     right: 0;
-    //     display: flex;
-    //     align-items: center;
-
-    //     &-center {
-    //         position: absolute;
-
-    //         z-index: -1;
-    //         height: 700px;
-    //         width: 1000px;
-    //         box-shadow: 0 0 10em rgba(0, 0, 0, 0.1), 0 0 0 1000vw rgba(0, 0, 0, 1);
-    //         left: 50%;
-    //         transform: translate(calc(-50% + 200px));
-    //         top: 240px;
-
-    //         &-content {
-    //             -webkit-box-shadow: inset 0px 0px 74px 98px rgba(0, 0, 0, 1);
-    //             -moz-box-shadow: inset 0px 0px 74px 98px rgba(0, 0, 0, 1);
-    //             box-shadow: inset 0px 0px 74px 98px rgba(0, 0, 0, 1);
-    //             width: 100%;
-    //             height: 100%;
-
-    //         }
-
-    //     }
-    // }
-
-
-
-
     .frame {
         position: relative;
         z-index: 10;
@@ -107,9 +87,16 @@
             padding: 10px;
 
             &-content {
-                padding: 30px 30px 40px 30px;
+               
             }
         }
     }
 
 }
+
+
+@media only screen and (max-width: 1600px) {
+    .variations-flex{
+        zoom:0.8;
+    }
+  }

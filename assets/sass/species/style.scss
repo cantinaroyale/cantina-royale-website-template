@@ -24,6 +24,8 @@
         margin: 0 auto;
         height: 470px;
         margin-top:60px;
+        position: relative;
+        z-index: 99;
         &-wrapper {
             align-items: center;
         }
@@ -35,14 +37,15 @@
 
             .frame {
                 width: 200px;
-                padding: 15px;
-                &-inner{
-                    padding: 7px;
+                // padding: 15px;
+                // &-inner{
+                //     padding: 7px;
                    
-                }
+                // }
             }
 
             .species-slider-element {
+                width:162px;
                 &-text {
                     position: absolute;
                     bottom: -15px;

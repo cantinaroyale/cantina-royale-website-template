@@ -4,6 +4,7 @@
 @import './spinner.scss';
 @import './popup.scss';
 @import './app-loader.scss';
+@import './circles.scss';
 
 .flex-start {
   display: flex;
@@ -26,14 +27,15 @@
 body {
   font-family: $main-font;
 }
-.container{
+
+.container {
   position: relative;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  height:100%;
-  justify-content:flex-start;
-  padding-top:120px;
+  height: 100%;
+  justify-content: flex-start;
+  padding-top: 120px;
 
   &-title {
     font-weight: bold;
@@ -41,27 +43,39 @@ body {
     line-height: 60px;
     text-align: center;
     text-shadow: 0px 4px 30px #000000;
-    margin-bottom:20px;
-    font-weight:500;
-    strong{
-      font-weight:700;
+    margin-bottom: 20px;
+    font-weight: 500;
+
+    strong {
+      font-weight: 700;
     }
 
-}
+  }
+
   &-subtitle {
-    text-align:center;
+    text-align: center;
     font-size: 22px;
     line-height: 26px;
     max-width: 640px;
     font-weight: 200;
-    strong{
-        font-weight: 500;
+
+    strong {
+      font-weight: 500;
     }
-}
+  }
 }
 
 
-h1,h2,h3,h4,h5,p,h6, strong, button, a{
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+h6,
+strong,
+button,
+a {
   font-family: $main-font;
   color: white;
 }
@@ -78,7 +92,7 @@ h1,h2,h3,h4,h5,p,h6, strong, button, a{
   z-index: 999;
   display: none;
   justify-content: center;
-  
+
   figure {
     top: 5px;
     position: absolute;
@@ -86,8 +100,8 @@ h1,h2,h3,h4,h5,p,h6, strong, button, a{
     background: #0182f9;
     border-radius: 30px;
     height: 9px;
-     animation: mover 1s infinite alternate;
-    
+    animation: mover 1s infinite alternate;
+
   }
 }
 
@@ -95,21 +109,24 @@ h1,h2,h3,h4,h5,p,h6, strong, button, a{
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(15px);
   }
 }
+
 @keyframes mover {
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(15px);
   }
 }
 
 
-*{
+* {
   color: white;
 }
 
@@ -127,7 +144,8 @@ h1,h2,h3,h4,h5,p,h6, strong, button, a{
     line-height: 36px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    strong{
+
+    strong {
       font-weight: 500;
     }
   }
@@ -135,72 +153,94 @@ h1,h2,h3,h4,h5,p,h6, strong, button, a{
 
 
 
-.video-popup{
-  transition:0.3s all;
-  opacity:0;
-  pointer-events:none;
-    .popup{
-      &-content{
-        max-width: 1150px;
-        max-height: 780px;
-        width:calc(100% - 100px);
-        height:calc(100% - 100px);
-        .frame{
-          padding:30px;
-          &-inner{
-            padding:20px;
-            &-content{
-              overflow:hidden;
+.video-popup {
+  transition: 0.3s all;
+  opacity: 0;
+  pointer-events: none;
 
-              video{
-                position:relative;
-                left:50%;
-                transform:translate(-50%);
-                width:auto;
-                height:100%;
-              }
+  .popup {
+    &-content {
+      max-width: 1150px;
+      max-height: 780px;
+      width: calc(100% - 100px);
+      height: calc(100% - 100px);
+
+      .frame {
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+
+        &-inner {
+          width: 100%;
+          height: 100%;
+          padding: 20px;
+
+          &-content {
+            overflow: hidden;
+
+            video {
+              position: relative;
+              left: 50%;
+              transform: translate(-50%);
+              width: auto;
+              height: 100%;
             }
           }
         }
       }
     }
+  }
 }
 
 
-.video-preview{
-  margin:0px;
-  width: 357px;
-  height: 245px;
-  transition:0.3s all;
-  cursor:pointer;
-  &-img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-  .frame{
+.video-preview {
+  margin: 0px;
+
+  transition: 0.3s all;
+  cursor: pointer;
+  padding: 9px;
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .frame {
+
+    position: relative;
     padding: 15px;
-    position:relative;
-    &-inner{
-      padding: 10px;
-      &-content{
-          overflow:hidden;
-          padding: 0px;
-         
-          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-        
-          .play{
-            position:absolute;
-            width:45px;
-            height:45px;
-            object-fit:contain;
-            left:50%;
-            top:50%;
-            transform:translate(-50%, -50%);
-            z-index:20;
+
+    &-inner {
+      padding: 7px;
+
+      &-content {
+        overflow: hidden;
+        padding: 0px;
+        width: 315px;
+        height: 215px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+        .play {
+          position: absolute;
+          width: 45px;
+          height: 45px;
+          object-fit: contain;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 20;
+          transition: 0.2s all;
+          transform-origin: center;
+        }
+
+        &:hover {
+          .play {
+            transform: scale(1.1) translate(-50%, -50%);
           }
+        }
       }
+    }
   }
-  }
- 
+
 }

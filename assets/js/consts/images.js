@@ -1,13 +1,16 @@
 export const images = {
-    img1: "/assets/images/home/img41.jpeg",
-    img2: "/assets/images/home/img42.jpeg",
-    img3: "/assets/images/home/img43.jpeg",
-    videImg: "/assets/images/home/img1.png",
+  
     play: "/assets/images/home/play.svg",
     close: "/assets/images/home/close.svg",
     appLoader: "/assets/images/home/app-loader.png",
     appLoaderOverlay: "/assets/images/home/app-loader-overlay.png",
     appLoaderBg: "/assets/images/home/app-loader-bg.png",
+    indicatorLine: "/assets/images/home/indicator-line.png",
+    shared: {
+        curve1: "/assets/images/home/shared/curve-1.png",
+        curve2: "/assets/images/home/shared/curve-2.png",
+        curve3: "/assets/images/home/shared/curve-3.png",
+    },
     main: {
             bg: "/assets/images/home/main/bg.png",
             overlay: "/assets/images/home/main/overlay.png",
@@ -15,6 +18,9 @@ export const images = {
     apes: {
         bg: "/assets/images/home/apes/bg.png",
         overlay: "/assets/images/home/apes/overlay.png",
+        coins: "/assets/images/home/apes/coins.png",
+        ape1: "/assets/images/home/apes/ape-1.png",
+        ape2: "/assets/images/home/apes/ape-2.png",
 },
     cantina: {
         bg: "/assets/images/home/cantina/bg.png",
@@ -45,6 +51,8 @@ export const images = {
         globe: "/assets/images/home/variations/globe.png",
         videoShape: "/assets/images/home/variations/video-shape.png",
         overlay: "/assets/images/home/variations/overlay.png",
+        circle: "/assets/images/home/variations/circle.png",
+        arrow: "/assets/images/home/variations/arrow.svg",
     },
     pve:{
         bg: "/assets/images/home/pve/bg.png",
@@ -59,6 +67,28 @@ export const images = {
     scholarships:{
         bg: "/assets/images/home/scholarships/bg.png",
         overlay: "/assets/images/home/scholarships/overlay.png",
+    },
+    partners:{
+        bg: "/assets/images/home/partners/bg.png",
+        overlay: "/assets/images/home/partners/overlay.png",
+        companies: {
+            atlas: "/assets/images/home/partners/companies/atlas.png",
+            avalanche: "/assets/images/home/partners/companies/avalanche.png",
+            coinMarketCap: "/assets/images/home/partners/companies/coin-market-cap.png",
+            crypto: "/assets/images/home/partners/companies/crypto.png",
+            meta: "/assets/images/home/partners/companies/meta.png",
+            opensea: "/assets/images/home/partners/companies/opensea.png",
+            sega: "/assets/images/home/partners/companies/sega.png",
+            star: "/assets/images/home/partners/companies/star.png",
+            switch: "/assets/images/home/partners/companies/switch.png",
+        },
+        community: {
+            discord: "/assets/images/home/partners/community/discord.svg",
+            telegram: "/assets/images/home/partners/community/telegram.svg",
+            social: "/assets/images/home/partners/community/social.svg",
+            youtube: "/assets/images/home/partners/community/youtube.svg",
+            twitter: "/assets/images/home/partners/community/twitter.svg",
+        }
     }
   };
   

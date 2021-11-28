@@ -12,8 +12,8 @@ const Figure = () => {
 
 function Indicator() {
   return (
-    <div className={`${animations.fadeInDown} indicator`}>
-      <img src={images.line} className='indicator-line' />
+    <div className={`${animations.fadeInRight} indicator`}>
+      <img src={images.indicatorLine} className='indicator-line' />
       {
         sections.map((section, index) => {
           return <section  id = {index === 0 ? 'selected-section' : ''} className="indicator-section"  data-link={section.link} key={index} data-index={index + 1}>

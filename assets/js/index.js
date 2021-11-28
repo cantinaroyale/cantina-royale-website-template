@@ -1,11 +1,14 @@
 import { pagesIndexes, sections } from "./consts/index.js"
-import variationsPage from './pages/variations.js';
 import mainPage from './pages/main.js';
 import indicator from './indicator/index.js'
 import speciesPage from './pages/species.js'
 import pvePage from "./pages/pve.js";
 import pvpPage from "./pages/pvp.js";
 import uiUtil from "./utils/ui.js";
+import variationsPage from "./pages/variations.js";
+import apesPage from "./pages/apes.js";
+
+
 
 const initFullPage = () => {
     $("#fullpage").fullpage({
@@ -19,17 +22,20 @@ const changePage = (_val, page) => {
     const index = page - 1;
     $.fn.fullpage.setMouseWheelScrolling(false)
     onPageChanged(index)
-    window.location.replace(sections[index].link)
+    location.replace(sections[index].link)
     sketch.change(index, () => $.fn.fullpage.setMouseWheelScrolling(true));
 };
 
 
-const onPageChanged = (index) => {
+const onPageChanged = async (index) => {
     indicator.changeActiveSection(index)
-     uiUtil.overlayHandler(index)
-     uiUtil.changeNavbarStyle(index)
+    uiUtil.overlayHandler(index)
+    uiUtil.changeNavbarStyle(index)
+    uiUtil.toggleIndicator(index > 0)
+
     clearIntervals()
     stopVideos()
+
     switch (index) {
         case pagesIndexes.variations:
             variationsPage.onPageInView()
@@ -40,8 +46,11 @@ const onPageChanged = (index) => {
         case pagesIndexes.pve:
             pvePage.onPageInView()
             break;
-            case pagesIndexes.pvp:
+        case pagesIndexes.pvp:
             pvpPage.onPageInView()
+            break;
+        case pagesIndexes.apes:
+            apesPage.onPageInView()
             break;
         default:
     }
@@ -51,12 +60,16 @@ const onPageChanged = (index) => {
 const stopVideos = () => {
     mainPage.stopVideo()
     pvePage.stopVideo()
+    pvpPage.stopVideo()
     variationsPage.stopVideo()
+    
+
 }
 
 
 const clearIntervals = () => {
     variationsPage.clearInterval()
+    apesPage.clearIntervals()
 }
 
 
@@ -68,17 +81,15 @@ const resetUrl = () => {
 
 
 
-export const init =  async () => {
-    mainPage.initVideo()
-    variationsPage.initWebGL()
+export const init = async () => {
     initFullPage()
+    mainPage.onPageInView()
+    speciesPage.createSlider()
     resetUrl()
     indicator.addEvents()
-    speciesPage.initSlider()
     //await uiUtil.hideAppLoader()
-    mainPage.playVideo(500)
 }
 
-window.onload = () => {
+onload = () => {
     init()
 }

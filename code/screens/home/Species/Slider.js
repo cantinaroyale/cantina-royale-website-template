@@ -5,7 +5,7 @@ import { Frame } from '../../../common'
 
 function Slider() {
     return (
-        <div class={`${animations.zoomIn} swiper species-slider`}>
+        <div class={`${animations.zoomIn} swiper species-slider animate__delay-2s base-delay`}>
         <div class="swiper-wrapper">
             {species.map((m, index) => {
                 return <div class="swiper-slide" key={index}>

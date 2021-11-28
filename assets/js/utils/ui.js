@@ -1,4 +1,4 @@
-import { pageLoaderAnimationTime, pagesIndexes, sections } from "../consts/index.js"
+import { pageLoaderAnimationTime, pagesIndexes, sections, animations } from "../consts/index.js"
 import { delay } from "./index.js"
 
 const overlayHandler = (index) => {
@@ -23,7 +23,19 @@ const overlayHandler = (index) => {
 }
 
 
-const toggleSectionsZindex = (value) => {
+const toggleIndicator = (val) => {
+  const container = document.querySelector('.indicator')
+    if(val){
+      container.style.display='block'
+      container.classList.remove(animations.fadeOutRight)
+    }else{
+      container.classList.add(animations.fadeOutRight)
+    }
+ 
+}
+
+
+export const toggleSectionsZindex = (value) => {
   const sections = document.querySelector('.sections')
   sections.style.zIndex = value  ? '99999' : ''
 }
@@ -71,13 +83,16 @@ const addEventsToVideoPreview = (popup, container, video) => {
 }
 
 
+
   const uiUtil = {
     overlayHandler,
     changeNavbarStyle,
     hideAppLoader,
     addEventsToPopup,
     addEventsToVideoPreview,
-    togglePopup
+    togglePopup,
+    toggleIndicator,
+    toggleSectionsZindex
   }
 
   export default uiUtil

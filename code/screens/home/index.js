@@ -10,8 +10,9 @@ import Pvp from './Pvp'
 import { Overlay, Video } from '../../common'
 import Navbar from "../../Navbar";
 import Scholarships from "./Scholarships";
-import Overlays from "./Overlays";
 import { images } from "../../../assets/js/consts";
+import Apes from "./Apes";
+import Partners from "./Partners";
 
 
 
@@ -35,6 +36,8 @@ const Home = ({ _relativeURL, _ID }) => {
         <Pve />
         <Pvp />
         <Scholarships />
+        <Apes />
+        <Partners />
       </div>
       <Indicator />
 

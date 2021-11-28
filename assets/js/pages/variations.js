@@ -1,81 +1,72 @@
-import { bodyPartsInterval } from '../consts/index.js'
-import { isMobile} from '../utils/index.js'
+import { isMobile } from '../utils/index.js'
 import VideoController from '../videoController/index.js'
-let video
-
-
-let interval
-
-
-const hideLoader = () => {
-    const loader = document.querySelector('#variations-ape-loader')
-    const modal = document.querySelector('.ape-figure')
-    loader.style.display = 'none'
-    modal.style.opacity = 1
-}
-
-const initWebGL = () => {
-    // const gameInstance = UnityLoader.instantiate(
-    //     "gameContainer",
-    //     "/assets/js/webgl/BAYC WebGL.json",
-    // )
-    // gameInstance.onProgress = (instance, p) => {
-    //     if (p === 1) {
-    //         hideLoader()
-    //     }
-    //   }
-    // window.gameInstance = gameInstance;
-}
+import WebGlModel from '../webGlModel/index.js'
 
 
 
-
-const initVideo = () => {
-    let videoSrc;
-    if (isMobile()) {
-        videoSrc = "/assets/videos/mobile/video-low-quality.m3u8";
-    } else {
-        videoSrc = "/assets/videos/desktop/video.m3u8";
+class VariationsPage {
+    video
+    webGlModel
+    isPlaying
+    timeout
+    constructor() {
+       
     }
-    video = new VideoController('variations-video', videoSrc)
-};
 
-
-
-
-const onPageInView = async () => {
-    if(!video){
-    initVideo()
+    getVideoUrl (){
+        if (isMobile()) {
+            return "/assets/videos/mobile/video-low-quality.m3u8";
+        } else {
+            return "/assets/videos/desktop/video.m3u8";
+        }
     }
-    video.play()
-   
-    // interval = setInterval(() => {
-    //     window.gameInstance.SendMessage('BAYCBodyParts', "RandomiseCharacter")
-    // }, bodyPartsInterval)
-}
 
-
-
-const clearInterval =  () => {
-    if (interval) {
-        window.clearInterval(interval)
-        interval = null
+    onWebGlModalLoaded() {
+        const loader = document.querySelector('#variations-ape-loader')
+        const modal = document.querySelector('.ape-figure')
+        loader.style.display = 'none'
+        modal.style.opacity = 1
     }
-}
 
-
-const stopVideo = () => {
-    if(video){
-        video.stop()
+    createWebGLModel() {
+        this.webGlModel = new WebGlModel('gameContainer', this.onWebGlModalLoaded)
     }
- 
+
+    createVideo = () => {
+        this.video = new VideoController('variations-video', this.getVideoUrl())
+    };
+
+
+    async onPageInView() {
+        if (!this.video) {
+            this.createVideo()
+        }
+        if(!this.webGlModel){
+        this.createWebGLModel()
+        }
+      
+        this.webGlModel.startInterval()
+        this.video.play()
+        this.isPlaying = true
+    }
+
+    clearInterval() {
+        if(this.webGlModel){
+            this.webGlModel.clearInterval()
+        }       
+    }
+
+    stopVideo() {
+        if (this.isPlaying) {
+            this.video.stop()
+            this.isPlaying = false
+        }
+    }
+
 }
 
-const variationsPage = {
-    clearInterval,
-    onPageInView,
-    stopVideo,
-    initWebGL
-}
+
+
+const variationsPage = new VariationsPage()
 
 export default variationsPage
