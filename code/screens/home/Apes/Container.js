@@ -12,7 +12,7 @@ function Container({ smallApe, coinsImg, id = ''}) {
             <Frame className='ape-model'>
                 <Spinner id={`${id}-loader`} />
                 <div
-                    style={{ width: 230, height: 300, opacity: 0 }}
+                    style={{ width: 250, height: 330, opacity: 0 }}
                     id={`${id}-model`}
                 ></div>
             </Frame>

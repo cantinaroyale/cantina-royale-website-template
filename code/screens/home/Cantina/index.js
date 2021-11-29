@@ -12,7 +12,7 @@ function Cantina({ generateLink }) {
        <strong> Lorem ipsum</strong> dolor ut elit <br /> amet, consectetur sit
       </h2>
       <div
-        className={`${animations.bounceIn} bottom-text cantina-bottom-text`}
+        className={`${animations.bounceIn} bottom-text`}
       >
         <p className='gradiant-text'>Lorem ipsum dolor sit amet,</p>
         <p className='gradiant-text'>consectetur adipiscing elit ut lorem,</p>

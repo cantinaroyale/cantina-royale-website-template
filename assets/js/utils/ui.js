@@ -56,31 +56,10 @@ const hideAppLoader = async () => {
 }
 
 
-const addEventsToPopup = (popup, overlay,closeBtn,  video) => {
-  overlay.addEventListener('click', () => {
-    togglePopup(popup, false)
-      video.stop()
-  })
-  closeBtn.addEventListener('click', () => {
-    togglePopup(popup, false)
-    video.stop()
-})
-
-}
 
 
-const togglePopup = (popup, show) => {
-  toggleSectionsZindex(show)
-  popup.style.opacity = show  ? 1 : 0
-  popup.style.pointerEvents = show ? 'all' : 'none' 
-}
 
-const addEventsToVideoPreview = (popup, container, video) => {
-  container.addEventListener('click', () => {
-      togglePopup(popup, true)
-      video.play()
-  })
-}
+
 
 
 
@@ -88,9 +67,7 @@ const addEventsToVideoPreview = (popup, container, video) => {
     overlayHandler,
     changeNavbarStyle,
     hideAppLoader,
-    addEventsToPopup,
-    addEventsToVideoPreview,
-    togglePopup,
+   
     toggleIndicator,
     toggleSectionsZindex
   }

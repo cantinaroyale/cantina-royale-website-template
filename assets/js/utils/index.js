@@ -5,7 +5,7 @@ export const delay = (ms) => {
   
 
 const isMobile = () => {
-    return  window.innerWidth <= 600
+    return  window.innerWidth <= 1000
 }
 
 

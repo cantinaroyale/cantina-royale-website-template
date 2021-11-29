@@ -9,7 +9,7 @@ import variationsPage from "./pages/variations.js";
 import apesPage from "./pages/apes.js";
 
 
-
+let allowScroll  = true
 const initFullPage = () => {
     $("#fullpage").fullpage({
         controlArrows: false,
@@ -19,12 +19,16 @@ const initFullPage = () => {
 
 
 const changePage = (_val, page) => {
+    if(!allowScroll){
+        return 
+    }
     const index = page - 1;
-    $.fn.fullpage.setMouseWheelScrolling(false)
+    $.fn.fullpage.setAllowScrolling(false)
     onPageChanged(index)
     location.replace(sections[index].link)
-    sketch.change(index, () => $.fn.fullpage.setMouseWheelScrolling(true));
+    sketch.change(index, () => $.fn.fullpage.setAllowScrolling(true));
 };
+
 
 
 const onPageChanged = async (index) => {

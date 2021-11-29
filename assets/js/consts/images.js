@@ -53,6 +53,7 @@ export const images = {
         overlay: "/assets/images/home/variations/overlay.png",
         circle: "/assets/images/home/variations/circle.png",
         arrow: "/assets/images/home/variations/arrow.svg",
+        bg: "/assets/images/home/variations/bg.png",
     },
     pve:{
         bg: "/assets/images/home/pve/bg.png",

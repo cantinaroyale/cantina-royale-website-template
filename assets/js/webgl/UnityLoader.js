@@ -321,10 +321,7 @@ var UnityLoader = UnityLoader || {
               (t.responseType = "text"),
               (t.onerror = function () {
                 n.print("Could not download " + r.url),
-                  0 == document.URL.indexOf("file:") &&
-                    alert(
-                      "It seems your browser does not support running Unity WebGL content from file:// urls. Please upload it to an http server, or try a different browser."
-                    );
+                  0 == document.URL.indexOf("file:") 
               }),
               (t.onload = function () {
                 var o = JSON.parse(t.responseText);
@@ -689,7 +686,7 @@ var UnityLoader = UnityLoader || {
               r.indexOf("out of memory") == -1) ||
             (r =
               "The browser could not allocate enough memory for the WebGL content. If you are the developer of this content, try allocating less memory to your WebGL build in the WebGL player settings."),
-          alert(r),
+          
           (this.didShowErrorMessage = !0);
       }
     },

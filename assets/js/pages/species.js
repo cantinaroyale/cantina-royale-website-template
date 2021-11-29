@@ -1,12 +1,13 @@
 import { delay } from "../utils/index.js"
 
 
+
 const sliderConfig = {
   loop: true,
   centeredSlides: true,
-  slidesPerView: 5,
-  spaceBetween: 30,
-  allowTouchMove: false,
+  slidesPerView: window.innerWidth >= 1000 ? 5 : 3,
+  spaceBetween: window.innerWidth >= 1000 ? 20 : 5,
+  allowTouchMove:  window.innerWidth >= 1000 ? false : true,
 }
 
 

@@ -2,10 +2,10 @@
     &-flex {
         display: flex;
         align-items: flex-start;
-        max-width: 820px;
+        max-width: 950px;
         width: calc(100% - 100px);
         justify-content: space-between;
-        margin-top:80px;
+        margin-top:100px;
     }
 
 
@@ -35,7 +35,7 @@
 
             &-top {
                 &-small {
-                    right: -70px;
+                    right: -50px;
                     width: 10px;
                     height: 10px;
                     top: 50px;
@@ -44,7 +44,7 @@
                 &-big {
                     width: 30px;
                     height: 30px;
-                    left: calc(100% + 40px);
+                    left: calc(100% + 10px);
                     top: 90px;
                 }
             }
@@ -54,7 +54,10 @@
         &-model {
             width: fit-content;
             position: relative;
-
+            padding: 20px;
+            .frame-inner{
+                padding: 10px;
+            }
             .spinner {
                 position: absolute;
                 left: 50%;
@@ -76,25 +79,29 @@
             @extend .selected;
             position: absolute;
             bottom: 10px;
-            left: calc(100% - 10px);
+            left: calc(100% - 40px);
             height: fit-content;
             background: linear-gradient(2.79deg, rgba(255, 171, 46, 0.3) 6.24%, rgba(255, 171, 46, 0.15) 141.83%);
-
+            padding: 11px;
             .frame {
-
+                 
                 &-inner {
+                    padding: 5px;
                     border: 1px dashed rgba(144, 129, 31, 0.6);
-
+                    width:fit-content;
+                    height:fit-content;
                     &-content {
                         background: linear-gradient(17.81deg, rgba(230, 209, 23, 0.5) 42.78%, rgba(230, 209, 23, 0) 93.77%);
                         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                        width: 125px;
+                        height: 123px;
                     }
                 }
             }
 
             img {
-                width: 125px;
-                height: 123px;
+                    width:100%;
+                    height:100%;
                 object-fit: contain;
             }
         }
@@ -258,5 +265,21 @@
     100% {
       -webkit-transform: translate(0);
               transform: translate(0);
+    }
+  }
+
+
+  @media only screen and (max-width: $mobile) {
+    .apes-flex{
+        flex-direction:column;
+        align-items:center;
+        zoom:0.4;
+        #ape-first-container{
+            margin-bottom:50px;
+            transform:translate(-180px);
+        }
+        #ape-second-container{
+            transform:translate(50px);
+        }
     }
   }

@@ -20,7 +20,7 @@ const sections =
     ]
 
 
-const pageImages = [images.main.bg, images.cantina.bg, images.species.bg, images.species.bg, images.pve.bg, images.pvp.bg, images.scholarships.bg, images.apes.bg, images.partners.bg]
+const pageImages = [images.main.bg, images.cantina.bg, images.species.bg, images.variations.bg, images.pve.bg, images.pvp.bg, images.scholarships.bg, images.apes.bg, images.partners.bg]
 
 
 

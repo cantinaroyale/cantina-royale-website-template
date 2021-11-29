@@ -33,7 +33,7 @@
             margin-top: 20px;
             display: flex;
             align-items: center;
-
+            justify-content:center;
             &-item {
                 width: 60px;
                 height: 60px;
@@ -57,6 +57,23 @@
                     }
                 }
 
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: $mobile){
+    .partners{
+        &-list{
+            zoom: 0.28;
+
+           
+        }
+        &-community{
+            &-list{
+                zoom: 0.5;
             }
         }
     }
