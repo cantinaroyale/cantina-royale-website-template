@@ -33,6 +33,7 @@ class PvePage {
 
 
     addEventsToPlayVideo() {
+        console.log(this.container)
         this.container.addEventListener('click', () => {
             this.playVideo()
         })

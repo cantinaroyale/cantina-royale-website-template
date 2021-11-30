@@ -7,9 +7,9 @@ import pvpPage from "./pages/pvp.js";
 import uiUtil from "./utils/ui.js";
 import variationsPage from "./pages/variations.js";
 import apesPage from "./pages/apes.js";
+import { delay } from "./utils/index.js";
 
 
-let allowScroll  = true
 const initFullPage = () => {
     $("#fullpage").fullpage({
         controlArrows: false,
@@ -18,22 +18,30 @@ const initFullPage = () => {
 }
 
 
-const changePage = (_val, page) => {
-    if(!allowScroll){
-        return 
-    }
+const changePage =  (_val, page) => {
+    console.log('test')
     const index = page - 1;
     $.fn.fullpage.setAllowScrolling(false)
     onPageChanged(index)
     location.replace(sections[index].link)
-    sketch.change(index, () => $.fn.fullpage.setAllowScrolling(true));
+    test()
+  
+    //sketch.change(index, () => $.fn.fullpage.setAllowScrolling(true));
 };
+
+const test = async () => {
+    await delay(1200)
+    $.fn.fullpage.setAllowScrolling(true)
+}
+
+
 
 
 
 const onPageChanged = async (index) => {
     indicator.changeActiveSection(index)
     uiUtil.overlayHandler(index)
+    uiUtil.bgHandler(index)
     uiUtil.changeNavbarStyle(index)
     uiUtil.toggleIndicator(index > 0)
 
@@ -90,6 +98,7 @@ export const init = async () => {
     indicator.addEvents()
     await uiUtil.hideAppLoader()
     mainPage.playVideo()
+    
 }
 
 onload = () => {

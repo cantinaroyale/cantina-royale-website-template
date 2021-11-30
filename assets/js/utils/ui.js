@@ -1,4 +1,4 @@
-import { pageLoaderAnimationTime, pagesIndexes, sections, animations } from "../consts/index.js"
+import { pageLoaderAnimationTime, pagesIndexes, sections, animations, pageImages } from "../consts/index.js"
 import { delay, getRootPath } from "./index.js"
 
 const overlayHandler = (index) => {
@@ -9,6 +9,15 @@ const overlayHandler = (index) => {
       overlay.style.display = src ? 'block' :  'none'
       overlay.setAttribute('src', rootPath ?  `/${rootPath}/${src}` :  src )
   }
+
+
+  const bgHandler = (index) => {
+    const rootPath = getRootPath()
+      const overlay = document.querySelector('.home-bg')
+        const selectedBg = pageImages[index]
+        overlay.style.display = selectedBg ? 'block' :  'none'
+        overlay.setAttribute('src', rootPath ?  `/${rootPath}/${selectedBg}` :  selectedBg )
+    }
 
 
   const changeNavbarStyle = (index) => {
@@ -68,7 +77,7 @@ const hideAppLoader = async () => {
     overlayHandler,
     changeNavbarStyle,
     hideAppLoader,
-   
+    bgHandler, 
     toggleIndicator,
     toggleSectionsZindex
   }
