@@ -21,10 +21,11 @@ class MainPage {
     };
 
     stopVideo() {
-        if (this.isPlaying) {
+       
+        if(this.video){
             this.video.stop()
-            this.isPlaying = false
         }
+       
     }
 
     async onPageInView(delayMilliseconds){

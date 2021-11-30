@@ -1,12 +1,11 @@
 import React from 'react'
-import { animations } from '../../../../assets/js/consts'
+import { animations, images } from '../../../../assets/js/consts'
 import Slider from './Slider'
 import {Circles} from '../../../common'
 
 function Species({generateLink}) {
     return (
         <div className="section species" id="section2" data-anchor="species">
-             
             <div className='container hidden-flex'>
             <Circles  generateLink = {generateLink}/>
                 <h3 className={`${animations.bounceInDown} container-title`} >

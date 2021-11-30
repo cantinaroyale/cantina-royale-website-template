@@ -1,5 +1,5 @@
 import React from 'react'
-import { animations, partners, community } from '../../../../assets/js/consts/index'
+import { animations, partners, community, images } from '../../../../assets/js/consts/index'
 
 
 function Partners({generateLink}) {

@@ -6,6 +6,7 @@ import { Frame, Spinner, Video } from '../../../common'
 function Variations({generateLink}) {
     return (
         <div className="section variations" id="section3" data-anchor="3d-variations">
+
             <div className='container'>
     
                 <h3 className={`${animations.slideInUp} container-title hidden-block`}><strong>Lorem ipsum </strong> dolor ut elit amet, consectetur sit</h3>

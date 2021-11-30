@@ -1,10 +1,14 @@
 import React from "react";
+import { images } from "../../assets/js/consts";
 
 const MetaTags = ({ _relativeURL, _ID }) => {
+  const generateLink = (url) => {
+    return handleUrl(url, _relativeURL, _ID);
+  };
   return (
     <React.Fragment>
       {/* <link
-        href={handleUrl(images.common.favicon, _relativeURL, _ID)}
+        href={generateLink(images.common.favicon)}
         rel="shortcut icon"
         type="image/x-icon"
       /> */}
@@ -13,11 +17,11 @@ const MetaTags = ({ _relativeURL, _ID }) => {
       <meta property="og:locale" content="en_US" />
       <meta property="og:locale:alternate" content="en_US" />
       <meta name="description" content="" />
-      {/* <meta name="title" content={title} /> */}
+      <meta name="title" content='' />
       <meta property="og:type" content="website" />
       <meta property="og:title" content="" />
       <meta property="og:description" content="" />
-      {/* <meta property="og:url" content={url} /> */}
+      <meta property="og:url" content='' />
       <meta property="og:image" content="" />
       <meta property="og:image:secure_url" content="" />
       <meta property="og:site_name" content="" />

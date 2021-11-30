@@ -26,6 +26,7 @@ const Home = ({ _relativeURL, _ID }) => {
     <div className="home">
       <Navbar generateLink = {generateLink} />
       <Overlay src = {generateLink(images.main.overlay)}  />
+      <img src = {images.main.bg} className ='home-bg' />
       <Video id="main-video" className='full-screen-video' />
       
       <div className="sections" id="fullpage">

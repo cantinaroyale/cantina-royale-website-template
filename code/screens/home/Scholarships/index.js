@@ -1,12 +1,11 @@
 import React from 'react'
-import { animations } from '../../../../assets/js/consts/index'
+import { animations, images } from '../../../../assets/js/consts/index'
 import { Frame } from '../../../common'
 
 
 function Scholarships({generateLink}) {
     return (
         <div className="section scholarships" id="section6" data-anchor="scholarships">
-
             <div className='container hidden-flex'>
                 <h3 className={`${animations.slideInUp} container-title`}><strong>Lorem ipsum </strong> dolor ut elit amet, consectetur sit</h3>
                 <h5 className={`${animations.fadeIn} container-subtitle`}><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit ut lorem, purus sit <strong>amet luctus</strong> venenatis</h5>

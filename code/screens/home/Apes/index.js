@@ -7,7 +7,6 @@ function Apes({ generateLink }) {
 
     return (
         <div className="section apes" id="section7" data-anchor="apes">
-
             <div className='container'>
                 <h2 className="container-title">
                     <strong> Lorem ipsum</strong> dolor ut elit  amet, consectetur sit

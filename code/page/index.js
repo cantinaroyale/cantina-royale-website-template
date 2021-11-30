@@ -57,13 +57,13 @@ const Page = (props) => {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src={handleUrl('/assets/js/webgl/UnityLoader.js', _relativeURL, _ID)}></script>
       
-        <script
+        {/* <script
           src={handleUrl("/assets/js/transition/sketch.js", _relativeURL, _ID)}
         />
       
         <script
           src={handleUrl("/assets/js/transition/demo.js", _relativeURL, _ID)}
-        />
+        /> */}
         <script type='module' src={handleUrl('/assets/js/index.js', _relativeURL, _ID)}></script>
 
       </body>

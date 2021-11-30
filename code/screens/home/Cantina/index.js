@@ -1,11 +1,11 @@
 import React from "react";
-import { animations } from "../../../../assets/js/consts";
+import { animations , images} from "../../../../assets/js/consts";
 import {Circles} from '../../../common'
 
 function Cantina({ generateLink }) {
   return (
     <div className="section cantina" id="section1" data-anchor="cantina-metaverse">
-       
+
       <div className = 'container hidden-flex'>
       <Circles generateLink = {generateLink} />
       <h2 className="container-title">
