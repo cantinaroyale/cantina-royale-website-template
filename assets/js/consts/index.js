@@ -4,6 +4,7 @@ import animations from './animations.js'
 import species from './species.js'
 import partners from './partners.js'
 import community from './community.js'
+import videos from './videos.js'
 
 
 
@@ -29,4 +30,4 @@ const pageLoaderAnimationTime = 4000
 const bodyPartsInterval = 10000
 
 
-export {  sections, images, pageImages, animations, species, pagesIndexes, pageLoaderAnimationTime, bodyPartsInterval, partners, community };
+export {  sections,videos,  images, pageImages, animations, species, pagesIndexes, pageLoaderAnimationTime, bodyPartsInterval, partners, community };
