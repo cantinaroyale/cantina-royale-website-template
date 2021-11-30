@@ -1,12 +1,13 @@
 import { pageLoaderAnimationTime, pagesIndexes, sections, animations } from "../consts/index.js"
-import { delay } from "./index.js"
+import { delay, getRootPath } from "./index.js"
 
 const overlayHandler = (index) => {
+  const rootPath = getRootPath()
     const overlay = document.querySelector('.home-overlay')
       const selectedSection = sections[index]
       const src = selectedSection.overlay
       overlay.style.display = src ? 'block' :  'none'
-      overlay.setAttribute('src', src )
+      overlay.setAttribute('src', rootPath ?  `/${rootPath}/${src}` :  src )
   }
 
 
