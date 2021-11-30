@@ -6,10 +6,11 @@ class WebGlModel {
     containerId
     interval
     onLoaded
-    constructor(id, onLoaded) {
+    constructor(id, onLoaded, intervalMilliseconds) {
         this.containerId = id
         this.onLoaded = onLoaded
         this.init()
+        this.intervalMilliseconds = intervalMilliseconds
     }
 
 
@@ -40,7 +41,7 @@ class WebGlModel {
     startInterval() {
         this.interval = setInterval(() => {
             this.randomizeBodyParts()
-        }, bodyPartsInterval)
+        }, this.intervalMilliseconds || bodyPartsInterval)
     }
 
     randomizeBodyParts() {

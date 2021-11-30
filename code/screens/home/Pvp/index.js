@@ -7,7 +7,7 @@ function Pvp({generateLink}) {
         <div className="section pvp" id="section5" data-anchor="pvp">
              <Popup id='pvp-popup' className='video-popup' generateLink = {generateLink}>
                 <Frame id='pvp-popup-frame'>
-                <Video id='pvp-video' />
+                <Video id='pvp-video' poster = {generateLink(images.main.bg)} />
                 </Frame>
                 </Popup>
             <div className='container hidden-flex'>

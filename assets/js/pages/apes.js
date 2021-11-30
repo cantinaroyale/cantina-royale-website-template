@@ -18,8 +18,8 @@ class ApesPage {
 
 
       createWebGLModels() {
-        this.firstWebGlInstance = new WebGlModel('ape-first-container-model', () => this.onWebGlModalLoaded('ape-first-container'))
-        this.secondWebGlInstance = new WebGlModel('ape-second-container-model', () => this.onWebGlModalLoaded('ape-second-container'))
+        this.firstWebGlInstance = new WebGlModel('ape-first-container-model', () => this.onWebGlModalLoaded('ape-first-container'), 3000)
+        this.secondWebGlInstance = new WebGlModel('ape-second-container-model', () => this.onWebGlModalLoaded('ape-second-container'), 3000)
        
     }
 

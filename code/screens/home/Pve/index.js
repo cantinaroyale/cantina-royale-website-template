@@ -7,7 +7,7 @@ function Pve({generateLink}) {
         <div className="section pve" id="section4" data-anchor="pve">
               <Popup id='pve-popup' className='video-popup' withBlur generateLink = {generateLink}>
                 <Frame id='pve-popup-frame'>
-                <Video id='pve-video' />
+                <Video id='pve-video' poster = {generateLink(images.main.bg)} />
                 </Frame>
                 </Popup>
             <div className='container hidden-flex'>

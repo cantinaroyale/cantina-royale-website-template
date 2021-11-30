@@ -1,4 +1,4 @@
-const TRANSITION_DURATION = 1.2
+const TRANSITION_DURATION = 0
 class Sketch {
   constructor(opts) {
     this.scene = new THREE.Scene();
