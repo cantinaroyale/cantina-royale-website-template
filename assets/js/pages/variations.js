@@ -1,3 +1,4 @@
+import videos from '../../videos/index.js'
 import { isMobile } from '../utils/index.js'
 import VideoController from '../videoController/index.js'
 import WebGlModel from '../webGlModel/index.js'
@@ -15,9 +16,9 @@ class VariationsPage {
 
     getVideoUrl (){
         if (isMobile()) {
-            return "/assets/videos/mobile/video-low-quality.m3u8";
+            return videos.mobile
         } else {
-            return "/assets/videos/desktop/video.m3u8";
+            return videos.desktop
         }
     }
 

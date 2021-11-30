@@ -12,7 +12,7 @@ function Slider({generateLink}) {
                     <Frame>
                         <div className='species-slider-element'>
                             <section className='species-slider-element-globe'>
-                            <img src = {m.globe}   />
+                            <img src = {generateLink(m.globe)}   />
                             <aside />
                             </section>
 

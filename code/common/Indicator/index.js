@@ -10,10 +10,10 @@ const Figure = () => {
   </figure>
 }
 
-function Indicator() {
+function Indicator({generateLink}) {
   return (
     <div className={`${animations.fadeInRight} indicator`}>
-      <img src={images.indicatorLine} className='indicator-line' />
+      <img src={generateLink(images.indicatorLine)} className='indicator-line' />
       {
         sections.map((section, index) => {
           return <section  id = {index === 0 ? 'selected-section' : ''} className="indicator-section"  data-link={section.link} key={index} data-index={index + 1}>
