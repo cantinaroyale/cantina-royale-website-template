@@ -4,12 +4,15 @@ import AppLoader from "../common/AppLoader";
 import { handleUrl } from "../utils";
 import MetaTags from "./meta";
 
-const Page = ({ title, _relativeURL, _ID, main, appLoader }) => {
+const Page = (props) => {
+  const { title, _relativeURL, _ID, main } = props
+  
   return (
     <html>
       <head>
         <title>{title}</title>
         <MetaTags _relativeURL={_relativeURL} _ID={_ID} />
+
         <link
           rel="stylesheet"
           href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
@@ -30,7 +33,8 @@ const Page = ({ title, _relativeURL, _ID, main, appLoader }) => {
         />
       </head>
       <body>
-          {appLoader}
+          
+        <AppLoader  {...props}/>
         <div className="main">{main}</div>
         <canvas />
         <div id="content" className="content">

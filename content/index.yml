@@ -1,5 +1,4 @@
 layout: page/index
-appLoader:
-  - /_shared/app-loader/index.md
+
 main:
   - home/index.md
