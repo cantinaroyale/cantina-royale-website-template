@@ -1,7 +1,9 @@
 
-const prefix = `/assets/images` 
+const prefix = `/assets/images`
 export const images = {
-  
+
+    favIcon: `assets/favicon.ico`,
+    social: `${prefix}/social-image.png`,
     play: `${prefix}/home/play.svg`,
     close: `${prefix}/home/close.svg`,
     appLoader: `${prefix}/home/app-loader.png`,
@@ -93,4 +95,3 @@ export const images = {
         }
     }
   };
-  
