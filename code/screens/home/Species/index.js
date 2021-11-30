@@ -15,7 +15,7 @@ function Species({generateLink}) {
                 <h5 className={`${animations.fadeInDown} container-subtitle`}>
                     <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit ut lorem, purus sit <strong>amet luctus</strong> venenatis
                 </h5>
-                <Slider />
+                <Slider generateLink = {generateLink} />
                 <h6  className={`${animations.slideInUp} species-bottom-text`}><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit ut lorem, purus sit <strong>amet luctus</strong> venenatis</h6>
             </div>
         </div>

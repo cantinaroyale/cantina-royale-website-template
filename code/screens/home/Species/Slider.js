@@ -3,7 +3,7 @@ import { animations, species } from '../../../../assets/js/consts'
 import { Frame } from '../../../common'
 
 
-function Slider() {
+function Slider({generateLink}) {
     return (
         <div class={`${animations.zoomIn} swiper species-slider animate__delay-2s base-delay`}>
         <div class="swiper-wrapper">
@@ -16,7 +16,7 @@ function Slider() {
                             <aside />
                             </section>
 
-                            <img src={m.image} className='species-slider-element-avatar' />
+                            <img src={generateLink(m.image)} className='species-slider-element-avatar' />
                             <figure className='species-slider-element-text'>
                                 <section className='species-slider-element-text-overlay'></section>
                                 <p>{m.text}</p>

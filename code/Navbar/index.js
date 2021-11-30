@@ -1,7 +1,7 @@
 import React from 'react'
 import { animations, images } from '../../assets/js/consts'
 
-function Navbar() {
+function Navbar({generateLink}) {
     return (
         <nav className='navbar'>
             <div className = 'navbar-flex'>
@@ -11,9 +11,9 @@ function Navbar() {
                     <section></section>
                     <section></section>
                 </div>
-                <a href='/' className='navbar-logo'><img src={images.navbar.logo} alt='logo' /></a>
+                <a href='/' className='navbar-logo'><img src={generateLink(images.navbar.logo)} alt='logo' /></a>
             </div>
-            <img  src={images.navbar.comingSoon} className={`${animations.fadeInRight} navbar-coming-soon animate__delay-0s`} />
+            <img  src={generateLink(images.navbar.comingSoon)} className={`${animations.fadeInRight} navbar-coming-soon animate__delay-0s`} />
             </div>
         </nav>
     )

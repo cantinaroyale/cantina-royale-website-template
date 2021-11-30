@@ -49,8 +49,7 @@ export const images = {
     },
     variations: {
         globe: "/assets/images/home/variations/globe.png",
-        videoShape: "/assets/images/home/variations/video-shape.png",
-        overlay: "/assets/images/home/variations/overlay.png",
+        videoShape: "/assets/images/home/variations/overlay.png",
         circle: "/assets/images/home/variations/circle.png",
         arrow: "/assets/images/home/variations/arrow.svg",
         bg: "/assets/images/home/variations/bg.png",
