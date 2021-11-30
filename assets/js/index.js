@@ -83,8 +83,6 @@ const resetUrl = () => {
 }
 
 
-
-
 export const init = async () => {
     initFullPage()
     speciesPage.createSlider()
