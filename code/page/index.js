@@ -32,7 +32,7 @@ const Page = ({ title, _relativeURL, _ID, main }) => {
       </head>
       <body>
 
-        {/* <AppLoader /> */}
+        <AppLoader />
         <div className="main">{main}</div>
         <canvas />
         <div id="content" className="content">

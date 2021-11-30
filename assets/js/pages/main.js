@@ -27,7 +27,7 @@ class MainPage {
     }
 
     async onPageInView(delayMilliseconds){
-        // this.playVideo(delayMilliseconds)
+         this.playVideo(delayMilliseconds)
     }
 
 

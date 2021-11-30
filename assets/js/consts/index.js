@@ -11,7 +11,7 @@ const sections =
     [{ name: 'Game Play Video', link: '/#game-play-video', overlay: images.main.overlay },
     { name: 'Cantina Metaverse', link: '#cantina-metaverse', overlay: images.cantina.overlay },
     { name: 'Species', link: '#species', overlay: images.species.overlay },
-    { name: '3d Variations', link: '#3d-variations' },
+    { name: '3d Variations', link: '#3d-variations',  overlay: images.species.overlay  },
     { name: 'PVE', link: '#pve', overlay: images.pve.overlay },
     { name: 'PVP', link: '#pvp', overlay: images.pvp.overlay },
     { name: 'Scholarships', link: '#scholarships', overlay: images.scholarships.overlay },

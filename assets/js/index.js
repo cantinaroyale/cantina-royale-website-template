@@ -87,11 +87,11 @@ const resetUrl = () => {
 
 export const init = async () => {
     initFullPage()
-    mainPage.onPageInView()
     speciesPage.createSlider()
     resetUrl()
     indicator.addEvents()
-    //await uiUtil.hideAppLoader()
+    await uiUtil.hideAppLoader()
+    mainPage.playVideo()
 }
 
 onload = () => {
