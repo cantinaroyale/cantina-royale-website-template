@@ -60,10 +60,7 @@ const Page = (props) => {
         <script
           src={handleUrl("/assets/js/transition/sketch.js", _relativeURL, _ID)}
         />
-        <script
-        type='module'
-          src={handleUrl("/assets/js/script.js", _relativeURL, _ID)}
-        />
+      
         <script
           src={handleUrl("/assets/js/transition/demo.js", _relativeURL, _ID)}
         />

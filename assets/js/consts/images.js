@@ -6,7 +6,7 @@ export const images = {
     close: `${prefix}/home/close.svg`,
     appLoader: `${prefix}/home/app-loader.png`,
     appLoaderOverlay: `${prefix}/home/app-loader-overlay.png`,
-    appLoaderBg: `${prefix}/home/app-loader-bg.png`,
+    appLoaderBg: `${prefix}/home/main/bg.jpg`,
     indicatorLine: `${prefix}/home/indicator-line.png`,
     shared: {
         curve1: `${prefix}/home/shared/curve-1.png`,
@@ -14,7 +14,7 @@ export const images = {
         curve3: `${prefix}/home/shared/curve-3.png`,
     },
     main: {
-            bg: `${prefix}/home/main/bg.png`,
+            bg: `${prefix}/home/main/bg.jpg`,
             overlay: `${prefix}/home/main/overlay.png`,
     },
     apes: {
