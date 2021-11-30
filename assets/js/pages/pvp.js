@@ -1,6 +1,7 @@
 import VideoController from '../videoController/index.js'
 import uiUtil from '../utils/ui.js'
 import { isMobile } from '../utils/index.js';
+import videos from '../../videos/index.js';
 
 class PvpPage {
     isPlaying
@@ -18,9 +19,9 @@ class PvpPage {
 
     getVideoUrl() {
         if (isMobile()) {
-            return "/assets/videos/mobile/video-low-quality.m3u8";
+            return videos.mobile;
         } else {
-            return "/assets/videos/desktop/video.m3u8";
+            return videos.desktop
         }
     }
 
