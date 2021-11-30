@@ -2,7 +2,7 @@ import React from 'react'
 import { animations, images } from '../../../../assets/js/consts/index'
 import { Frame, Video } from '../../../common'
 import Popup from '../../../common/Popup'
-function Pvp() {
+function Pvp({generateLink}) {
     return (
         <div className="section pvp" id="section5" data-anchor="pvp">
              <Popup id='pvp-popup' className='video-popup'>
@@ -21,8 +21,8 @@ function Pvp() {
                 </div>
                
                 <Frame id ='pvp-bottom-frame' className={`${animations.fadeInUp} video-preview`}>
-                   <img src = {images.pvp.videoPreview} className='video-preview-img' />
-                   <img src = {images.play} className='play' />
+                   <img src = {generateLink(images.pvp.videoPreview)} className='video-preview-img' />
+                   <img src = {generateLink(images.play)} className='play' />
                 </Frame>
                 </div>
 

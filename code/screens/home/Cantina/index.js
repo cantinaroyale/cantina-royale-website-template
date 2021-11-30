@@ -7,7 +7,7 @@ function Cantina({ generateLink }) {
     <div className="section cantina" id="section1" data-anchor="cantina-metaverse">
        
       <div className = 'container hidden-flex'>
-      <Circles />
+      <Circles generateLink = {generateLink} />
       <h2 className="container-title">
        <strong> Lorem ipsum</strong> dolor ut elit <br /> amet, consectetur sit
       </h2>

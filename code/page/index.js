@@ -40,7 +40,7 @@ const Page = (props) => {
         <div id="content" className="content">
           <div
             id="slider"
-            data-images={JSON.stringify(pageImages)}
+            data-images={JSON.stringify(pageImages.map(img => handleUrl(img, _relativeURL, _ID )))}
           ></div>
         </div>
 
@@ -56,9 +56,7 @@ const Page = (props) => {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src={handleUrl('/assets/js/webgl/UnityLoader.js', _relativeURL, _ID)}></script>
-        {/* <script src = 'https://unpkg.com/gl-transitions@0.57.0/gl-transitions.json' />
-        <script src = 'https://unpkg.com/gl-transitions@0.57.0/gl-transitions.js' /> */}
-        {/* <script src ='https://cdn.jsdelivr.net/npm/gl-shader@4.3.1/index.min.js' /> */}
+      
         <script
           src={handleUrl("/assets/js/transition/sketch.js", _relativeURL, _ID)}
         />

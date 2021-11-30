@@ -4,6 +4,7 @@ import Container from "./Container";
 
 
 function Apes({ generateLink }) {
+
     return (
         <div className="section apes" id="section7" data-anchor="apes">
 
@@ -14,9 +15,9 @@ function Apes({ generateLink }) {
                 <h5 className={`${animations.fadeIn} container-subtitle`}><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit ut lorem, purus sit <strong>amet luctus</strong> venenatis</h5>
 
                 <div className='apes-flex'>
-                    <Container coinsImg={images.apes.coins} smallApe={images.apes.ape1} id='ape-first-container'
+                    <Container coinsImg={generateLink(images.apes.coins)} smallApe={generateLink(images.apes.ape1)} id='ape-first-container'
                     />
-                    <Container coinsImg={images.apes.coins} smallApe={images.apes.ape2} id='ape-second-container' />
+                    <Container coinsImg={generateLink(images.apes.coins)} smallApe={generateLink(images.apes.ape2)} id='ape-second-container' />
                 </div>
             </div>
         </div>

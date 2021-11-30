@@ -25,21 +25,21 @@ const Home = ({ _relativeURL, _ID }) => {
   return (
     <div className="home">
       <Navbar />
-      <Overlay src = {images.main.overlay}  />
+      <Overlay src = {generateLink(images.main.overlay)}  />
       <Video id="main-video" className='full-screen-video' />
       
       <div className="sections" id="fullpage">
         <Main generateLink={generateLink} />
         <Cantina generateLink={generateLink} />
-        <Species />
-        <Variations />
-        <Pve />
-        <Pvp />
-        <Scholarships />
-        <Apes />
-        <Partners />
+        <Species generateLink = {generateLink} />
+        <Variations generateLink = {generateLink} />
+        <Pve generateLink = {generateLink} />
+        <Pvp generateLink = {generateLink} />
+        <Scholarships generateLink = {generateLink} />
+        <Apes generateLink = {generateLink} />
+        <Partners generateLink = {generateLink} />
       </div>
-      <Indicator />
+      <Indicator generateLink=  {generateLink} />
 
     </div>
   );

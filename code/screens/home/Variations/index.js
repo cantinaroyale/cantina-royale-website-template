@@ -3,7 +3,7 @@ import { images, animations } from '../../../../assets/js/consts/index'
 import { Frame, Spinner, Video } from '../../../common'
 
 
-function Variations() {
+function Variations({generateLink}) {
     return (
         <div className="section variations" id="section3" data-anchor="3d-variations">
             <div className='container'>
@@ -13,9 +13,9 @@ function Variations() {
                 <div className='variations-flex'>
 
                     <div className='variations-ape'>
-                        <img src={images.variations.globe} className={`${animations.slideInLeft} variations-globe`} />
+                        <img src={generateLink(images.variations.globe)} className={`${animations.slideInLeft} variations-globe`} />
                         <Frame>
-                            <img src={images.variations.arrow} className={`${animations.bounceIn} variations-ape-arrow`} />
+                            <img src={generateLink(images.variations.arrow)} className={`${animations.bounceIn} variations-ape-arrow`} />
                             <Spinner id='variations-ape-loader' />
                             <div
                                 style={{ width: 320, height: 410, opacity: 0 }}
@@ -25,9 +25,9 @@ function Variations() {
                         </Frame>
                     </div>
                     <div className='variations-video'>
-                        <img src={images.variations.videoShape} className='variations-video-overlay' />
+                        <img src={generateLink(images.variations.videoShape)} className='variations-video-overlay' />
                         <div className='variations-video-container'>
-                            <img src = {images.variations.circle} className='variations-video-container-circle' />
+                            <img src = {generateLink(images.variations.circle)} className='variations-video-container-circle' />
                             <Video id='variations-video' />
                         </div>
                     </div>

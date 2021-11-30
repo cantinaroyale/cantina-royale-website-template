@@ -3,7 +3,7 @@ import { animations } from '../../../../assets/js/consts/index'
 import { Frame } from '../../../common'
 
 
-function Scholarships() {
+function Scholarships({generateLink}) {
     return (
         <div className="section scholarships" id="section6" data-anchor="scholarships">
 

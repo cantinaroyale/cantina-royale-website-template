@@ -2,7 +2,7 @@ import React from 'react'
 import { animations, images } from '../../../../assets/js/consts/index'
 import { Frame, Video } from '../../../common'
 import Popup from '../../../common/Popup'
-function Pve() {
+function Pve({generateLink}) {
     return (
         <div className="section pve" id="section4" data-anchor="pve">
               <Popup id='pve-popup' className='video-popup' withBlur>
@@ -22,8 +22,8 @@ function Pve() {
                 </div>
                
                 <Frame id ='pve-bottom-frame' className='video-preview'>
-                   <img src = {images.pve.videoPreview} className='video-preview-img' />
-                   <img src = {images.play} className='play' />
+                   <img src = {generateLink(images.pve.videoPreview)} className='video-preview-img' />
+                   <img src = {generateLink(images.play)} className='play' />
                 </Frame>
                 </div>
 
