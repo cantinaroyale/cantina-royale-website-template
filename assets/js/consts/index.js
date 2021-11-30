@@ -9,7 +9,7 @@ import videos from './videos.js'
 
 
 const sections =
-    [{ name: 'Game Play Video', link: '/#game-play-video', overlay: images.main.overlay },
+    [{ name: 'Game Play Video', link: '#game-play-video', overlay: images.main.overlay },
     { name: 'Cantina Metaverse', link: '#cantina-metaverse', overlay: images.cantina.overlay },
     { name: 'Species', link: '#species', overlay: images.species.overlay },
     { name: '3d Variations', link: '#3d-variations',  overlay: images.species.overlay  },
