@@ -1,5 +1,6 @@
 import { bodyPartsInterval } from "../consts/index.js"
-
+import { getRootPath } from "../utils/index.js"
+const rootPath = getRootPath()
 class WebGlModel {
     gameInstance
     containerId
@@ -15,10 +16,10 @@ class WebGlModel {
 
     init() {
         try {
-          
+
             const instance = UnityLoader.instantiate(
                 this.containerId,
-                "/assets/js/webgl/BAYC WebGL.json",
+                rootPath ? `/${rootPath}/assets/js/webgl/BAYC WebGL.json` : "/assets/js/webgl/BAYC WebGL.json",
             )
             instance.onProgress = (i, p) => {
                 if (p === 1 && this.onLoaded) {
@@ -29,7 +30,7 @@ class WebGlModel {
             this.gameInstance = instance;
 
             this.randomizeBodyParts()
-        } catch(err) {
+        } catch (err) {
             console.log('error' + err)
         }
 
