@@ -4,7 +4,7 @@ import AppLoader from "../common/AppLoader";
 import { handleUrl } from "../utils";
 import MetaTags from "./meta";
 
-const Page = ({ title, _relativeURL, _ID, main }) => {
+const Page = ({ title, _relativeURL, _ID, main, appLoader }) => {
   return (
     <html>
       <head>
@@ -31,8 +31,7 @@ const Page = ({ title, _relativeURL, _ID, main }) => {
         />
       </head>
       <body>
-
-        <AppLoader />
+          {appLoader}
         <div className="main">{main}</div>
         <canvas />
         <div id="content" className="content">
