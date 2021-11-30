@@ -1,9 +1,10 @@
-import videos from '../../videos/index.js'
-import { isMobile } from '../utils/index.js'
+import { videos } from '../consts/index.js'
+import { isMobile, getRootPath } from '../utils/index.js'
 import VideoController from '../videoController/index.js'
 import WebGlModel from '../webGlModel/index.js'
 
 
+const rootPath = getRootPath()
 
 class VariationsPage {
     video
@@ -16,9 +17,9 @@ class VariationsPage {
 
     getVideoUrl (){
         if (isMobile()) {
-            return videos.mobile
+            return rootPath ? `/${rootPath}/${videos.mobile}` : videos.mobile
         } else {
-            return videos.desktop
+            return rootPath ? `/${rootPath}/${videos.desktop}` : videos.desktop
         }
     }
 

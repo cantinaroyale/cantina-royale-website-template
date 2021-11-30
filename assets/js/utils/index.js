@@ -8,7 +8,9 @@ const isMobile = () => {
     return  window.innerWidth <= 1000
 }
 
+const getRootPath = () =>  {
+  return document.body.getAttribute('data-root')
+}
 
 
-
-  export {isMobile}
+  export {isMobile, getRootPath}

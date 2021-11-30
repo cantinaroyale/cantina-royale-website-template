@@ -5,7 +5,7 @@ import Popup from '../../../common/Popup'
 function Pvp({generateLink}) {
     return (
         <div className="section pvp" id="section5" data-anchor="pvp">
-             <Popup id='pvp-popup' className='video-popup'>
+             <Popup id='pvp-popup' className='video-popup' generateLink = {generateLink}>
                 <Frame id='pvp-popup-frame'>
                 <Video id='pvp-video' />
                 </Frame>

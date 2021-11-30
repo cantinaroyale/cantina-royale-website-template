@@ -32,7 +32,7 @@ const Page = (props) => {
           href={handleUrl(`/assets/css/index.css`, _relativeURL, _ID)}
         />
       </head>
-      <body>
+      <body data-root = {process.env.root}>
           
         <AppLoader  {...props}/>
         <div className="main">{main}</div>
