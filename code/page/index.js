@@ -10,7 +10,6 @@ const Page = ({ title, _relativeURL, _ID, main, appLoader }) => {
       <head>
         <title>{title}</title>
         <MetaTags _relativeURL={_relativeURL} _ID={_ID} />
-
         <link
           rel="stylesheet"
           href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
